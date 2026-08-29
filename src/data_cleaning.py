@@ -13,5 +13,5 @@ def clean_rating_count(df,col_name='rating_count'):
     #This function converts the rating_count from string to numeric
     if col_name in df.columns:
         # The r'(\d+)' regex extracts the first sequence of digits it finds in the string
-        df[col_name] = df[col_name].astype(str).str.extract(r'(\d+)').astype(int)
+        df[col_name] = df[col_name].astype(str).str.extract(r'(\d+)').astype(float)
     return df
