@@ -1,0 +1,40 @@
+# Virtual Environments
+EDAenv/
+venv/
+env/
+.env
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# Python Cache & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Data Files
+# (It is best practice to ignore large datasets and keep them local)
+data/raw/
+*.csv
+*.tsv
+*.xlsx
+*.parquet
+
+# Exception: Allow sample data if you want to share a tiny dataset snippet
+# !data/sample_swiggy_data.csv 
+
+# OS Specific Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE / Editor Folders
+.vscode/
+.idea/
+*.swp
