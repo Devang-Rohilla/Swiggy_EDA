@@ -15,3 +15,7 @@ def clean_rating_count(df,col_name='rating_count'):
         # The r'(\d+)' regex extracts the first sequence of digits it finds in the string
         df[col_name] = df[col_name].astype(str).str.extract(r'(\d+)').astype(float)
     return df
+def cost_str_to_float(df,column='cost'):
+    if column in df:
+        df[column]= df[column].astype(str).str.extract(r'(\d+)').astype(float)
+    return df
