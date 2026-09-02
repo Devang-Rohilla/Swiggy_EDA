@@ -8,8 +8,7 @@ This repository demonstrates an end-to-end data science workflow, from raw data 
 
 ## Key Insights
 
-* **Budget Dominance:** Approximately 90% of listed restaurants (over 133,000) are highly budget-friendly, charging ₹400 or less for a meal for two.
-* **Geographic Power-Law:** The restaurant distribution follows a massive long-tail curve. Tier-1 and Tier-2 hubs like Bangalore, Delhi, and Bikaner hold the vast majority of listings, while hundreds of smaller towns host fewer than 20 restaurants each.
+* **Budget Dominance:** Approximately 90% of listed restaurants (over 133,000) are highly budget-friendly, charging ₹400 or less for a meal.
 * **The Rating Gap:** Over 50% of the raw dataset contains a rating of exactly `0.0`, highlighting a massive influx of new, untested, or unrated vendor listings on the platform. Rated restaurants maintain an average score of 3.8.
 * **Pricing Outliers:** Data cleaning resolved severe pricing anomalies (including extreme data-entry errors up to ₹300,350) and standardized string variables containing hidden text and currency symbols.
 
@@ -22,7 +21,6 @@ This repository demonstrates an end-to-end data science workflow, from raw data 
 ├── notebooks/                # Jupyter notebooks for EDA and visualization
 ├── src/                      
 │   └── data_cleaning.py      # Modular scripts for regex parsing and type conversion
-├── reports/
-│   └── figures/              # Auto-generated high-resolution PNG plots
+├── images/              # Auto-generated high-resolution PNG plots
 ├── .gitignore                # Environment and large file exclusions
 └── README.md                 # Project documentation
