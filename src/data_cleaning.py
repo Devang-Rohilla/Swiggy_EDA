@@ -15,7 +15,10 @@ def clean_rating_count(df,col_name='rating_count'):
         # The r'(\d+)' regex extracts the first sequence of digits it finds in the string
         df[col_name] = df[col_name].astype(str).str.extract(r'(\d+)').astype(float)
     return df
-def cost_str_to_float(df,column='cost'):
+def cost_str_to_float(df, column='cost'):
     if column in df:
-        df[column]= df[column].astype(str).str.extract(r'(\d+)').astype(float)
+        # \D matches any character that is NOT a digit. We replace them with nothing.
+        df[column] = df[column].astype(str).str.replace(r'\D', '', regex=True)
+        # Convert to float (using pd.to_numeric handles empty strings better)
+        df[column] = pd.to_numeric(df[column], errors='coerce')
     return df
