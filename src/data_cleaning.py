@@ -16,9 +16,14 @@ def clean_rating_count(df,col_name='rating_count'):
         df[col_name] = df[col_name].astype(str).str.extract(r'(\d+)').astype(float)
     return df
 def cost_str_to_float(df, column='cost'):
-    if column in df:
-        # \D matches any character that is NOT a digit. We replace them with nothing.
-        df[column] = df[column].astype(str).str.replace(r'\D', '', regex=True)
-        # Convert to float (using pd.to_numeric handles empty strings better)
-        df[column] = pd.to_numeric(df[column], errors='coerce')
+    if column in df.columns:
+        # 1. Extract the first valid number sequence (e.g., '250' from '₹250 FOR 2' or '1,250')
+        extracted_str = df[column].astype(str).str.extract(r'([\d,]+)', expand=False)
+        
+        # 2. Remove commas from the extracted string
+        clean_str = extracted_str.str.replace(',', '', regex=False)
+        
+        # 3. Convert to float, coercing any remaining errors to NaN
+        df[column] = pd.to_numeric(clean_str, errors='coerce')
+        
     return df
