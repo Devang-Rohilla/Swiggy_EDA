@@ -12,6 +12,9 @@ This repository demonstrates an end-to-end data science workflow, from raw data 
 * **The Rating Gap:** Over 50% of the raw dataset contains a rating of exactly `0.0`, highlighting a massive influx of new, untested, or unrated vendor listings on the platform. Rated restaurants maintain an average score of 3.8.
 * **Pricing Outliers:** Data cleaning resolved severe pricing anomalies (including extreme data-entry errors up to ₹300,350) and standardized string variables containing hidden text and currency symbols.
 
+## Dataset used in this EDA can be downloaded from:- 
+<https://www.kaggle.com/datasets/ashishjangra27/swiggy-restaurants-dataset>
+
 ## Repository Structure
 
 ```text
